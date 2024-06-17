@@ -13,31 +13,27 @@
 #include <time.h> //Fazeer o relogio funcionar
 #include <string.h>
 
-enum cargo
-{
+enum cargo{
 	RECEPCIONISTA,
 	AUXILIARDELIMPEZA,
 	GARCOM,
 	GERENTE
 };
 
-struct funcionario
-{
+struct funcionario{
 	int codigo;
 	char nome[100];
 	int telefone;
 	enum cargo cargo;
 	float salario;
 };
-struct cliente
-{
+struct cliente{
 	int codigoC;
 	char nomeC[100];
 	char endereco[100];
 	int telefoneC;
 };
-struct estadia
-{
+struct estadia{
 	int estadia;
 	float checkin;
 	float checkout;
@@ -47,27 +43,23 @@ struct estadia
 	int codigoC;
 	int numeroQuarto;
 };
-enum statusQuarto
-{
+enum statusQuarto{
 	LIVRE,
 	OCUPADO
 };
-struct quarto
-{
+struct quarto{
 	int numeroQuarto;
 	int quantidadeDeHospede;
 	float valorDiaria;
 	enum statusQuarto statusQuarto;
 };
-typedef struct
-{
+typedef struct{
 	int ano;
 	short mes;
 	short dia;
 } Data;
 
-int relogio()
-{
+int relogio(){
 	// ponteiro para struct que armazena data e hora
 	struct tm *data_hora_atual;
 
@@ -99,23 +91,24 @@ int relogio()
 	return 0;
 }
 // Gerar codigo aleatorio para funcionarios e clientes
-int gerarCodigo()
-{
+int gerarCodigo(){
 }
 // Cadastro de cliente
-int cadastroCliente()
-{
+int cadastroCliente(){
+	struct cliente clie;
 	printf("Insira o nome do cliente:");
-	scanf("%c", &nomeC);
+	fgets(clie.nomeC,100,stdin);
+	clie.nomeC[strcspn(clie.nomeC,"\n")] = 0;
 	printf("Insira o endereço:");
-	scanf("%c", &endereco);
+	fgets(clie.endereco,100,stdin);
+	clie.endereco[strcspn(clie.endereco,"\n")] = 0;
+
 	printf("Insira o número de telefone:");
-	scanf("%d", &telefoneC);
-	printf("O codigo do cliente é:" gerarCodigo);
+	scanf("%d", &clie.telefoneC);
+	
 }
 // Cadastro de funcionarios
-struct funcionario cadastroFuncionario()
-{
+struct funcionario cadastroFuncionario(){
 	struct funcionario func;
 	printf("Insira o nome do funcionario:");
 	fgets(func.nome, 100, stdin);
@@ -124,8 +117,7 @@ struct funcionario cadastroFuncionario()
 	printf("Insira o telefone:");
 	scanf("%d", &func.telefone);
 
-	while (getchar() != '\n')
-		;
+	while (getchar() != '\n');
 
 	printf("Insira o cargo do funcionario:");
 	fgets(func.cargo, 100, stdin);
@@ -138,8 +130,7 @@ struct funcionario cadastroFuncionario()
 }
 
 // Função para ver o status dos quartos
-void statusDoQuarto(int n)
-{
+void statusDoQuarto(int n){
 	printf("Digite a quantidade de quartos do hotel:");
 	scanf("%d", &n);
 	for (int i = 0; i < n; i++)
@@ -148,12 +139,10 @@ void statusDoQuarto(int n)
 	}
 }
 // Calcular o valor da diaria
-float calcularDiaria()
-{
+float calcularDiaria(){
 }
 // Verificar se se a quaantidade de hospede da no quarto
-int quantidadeDeHospede(int hospedes)
-{
+int quantidadeDeHospede(int hospedes){
 	printf("Digite a quantidade de hospedes");
 	scanf("%d", &hospedes);
 	for (int i = 0; i <= hospedes; i++)
@@ -169,10 +158,9 @@ void exibirInformacoes(){
 
 }
 	// quartos do hotel
-	int quartosDoHotel()
-{
-	char ocupado;
-	char desocupado;
+	int quartosDoHotel(){
+	enum LIVRE;
+	enum OCUPADO;
 	struct quarto netuno;
 	struct quarto urano;
 	struct quarto saturno;
@@ -223,7 +211,6 @@ void exibirInformacoes(){
 	mercurio.statusQuarto = LIVRE;
 }
 
-int main()
-{
+int main(){
 	FILE *arquivo = fopen("cadastro_Hotel.txt", "w");
 }
