@@ -1,0 +1,6 @@
+Clientes:
+Código: 16458, Nome: MARIA, Endereço: RUA VVVVVVV, Telefone: 31900000000
+
+Funcionários:
+
+Estadias:
