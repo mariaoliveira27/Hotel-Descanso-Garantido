@@ -1,6 +1,6 @@
 # Hotel-Descanso-Garantido
 
-# Projeto Final - Algoritmos e Estruturas de Dados
+## Projeto Final - Algoritmos e Estruturas de Dados e Fundamentos de Engenharia de Software 
 
 ## Sistema de Cadastro de Hotel
 
